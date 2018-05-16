@@ -10,12 +10,16 @@ import {ExtratoPage} from '../extrato/extrato';
 })
 export class HomePage {
 
+  public myName = localStorage.getItem("nome");
+  public mySaldo = localStorage.getItem("saldo");
+
   constructor(public nav: NavController) {
   }
 
    // login and go to home page
   docompra() {
     this.nav.setRoot(CompraPage);
+    //console.log(this.myName);
   }
 
   doextrato(){

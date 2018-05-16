@@ -19,8 +19,10 @@ import {HomePage} from '../pages/home/home';
 import {LoginPage} from '../pages/login/login';
 import {CompraPage} from '../pages/compra/compra';
 import {ExtratoPage} from '../pages/extrato/extrato';
+import {HttpModule} from '@angular/http';
 import {StatusPage} from '../pages/status/status';
 import {CardapioPage} from '../pages/cardapio/cardapio';
+import { ConexaoProvider } from '../providers/conexao/conexao';
 
 
 // import services
@@ -42,6 +44,7 @@ import {CardapioPage} from '../pages/cardapio/cardapio';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
       scrollPadding: false,
@@ -69,7 +72,8 @@ import {CardapioPage} from '../pages/cardapio/cardapio';
     Keyboard,
     ActivityService,
     TripService,
-    WeatherProvider
+    WeatherProvider,
+    ConexaoProvider
   ]
 })
 

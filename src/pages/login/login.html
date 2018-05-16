@@ -17,7 +17,7 @@
           <ion-icon name="contact" item-start class="text-primary"></ion-icon>
           Matrícula
         </ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input class="ion-input" maxlength="14" type="text" [(ngModel)]="myMatricula" name="matricula"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -31,7 +31,7 @@
    <div class="spacer" style="height: 30px;"></div>
 
     <div>
-      <button ion-button icon-start block color="green" tappable (click)="login()">
+      <button ion-button icon-start block color="green" tappable (click)="login(matricula)">
         <ion-icon name="log-in"></ion-icon>
         Iniciar
       </button>
