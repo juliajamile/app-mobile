@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar class="nav_bar">
+    <ion-title>
+      <span ion-text>Home</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+		<ion-card-header>
+			Saldo
+		</ion-card-header>
+		<ion-card-content>
+			Seu saldo é de 12,50 reais
+		</ion-card-content>
+  	</ion-card>
+  	<div>
+  	<button ion-button icon-start block color="green" tappable (click)="docompra()">
+        <ion-icon name="card"></ion-icon>
+        Comprar
+    </button>
+    <button ion-button icon-start block color="green" tappable (click)="doextrato()">
+        <ion-icon name="list-box"></ion-icon>
+        Extrato
+    </button>
+ 	 </div>
+</ion-content>
