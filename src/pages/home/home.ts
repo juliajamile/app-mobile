@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CompraPage } from '../compra/compra';
 import { ExtratoPage } from '../extrato/extrato';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -21,8 +22,12 @@ export class HomePage {
    this.navCtrl.push( CompraPage);
   }
 
-  doextrato(){   
+  doextrato(){
  	 this.navCtrl.push(ExtratoPage);
+  }
+
+  dosair(){    
+    this.navCtrl.push(LoginPage);
   }
 
 }
