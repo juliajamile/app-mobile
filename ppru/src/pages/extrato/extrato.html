@@ -9,6 +9,8 @@
     <ion-title>
       <span ion-text>Extrato</span>
     </ion-title>
+
+    
   </ion-navbar>
 </ion-header>
 
@@ -27,33 +29,16 @@
     </ion-col>
   </ion-row>
 
-  <ion-row>
-  <ion-col>
-      4/05
-    </ion-col>
+  <ion-row *ngFor="let extrato of lista_extrato">
     <ion-col>
-      R$ 25,00
-  </ion-col>
-  </ion-row>
+      {{extrato.DATA_COMPRA}}
+    </ion-col>
 
-<ion-row>
-  <ion-col>
-      23/04
-    </ion-col>
     <ion-col>
-      R$ 2,50
-  </ion-col>
+      {{extrato.VALOR_COMPRA}}
+    </ion-col>
   </ion-row>
 
 </ion-grid>
-
-
-<div>
-  <button ion-button icon-start block color="green" tappable (click)="extrato()" class="butom_inicia">
-    <ion-icon name="log-in"></ion-icon>
-    Carregar
-  </button>
-   <div class="spacer" style="height: 60px;"></div>
-</div>
 
 </ion-content>

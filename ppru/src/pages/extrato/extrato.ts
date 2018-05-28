@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ExtratoPProvider } from '../../providers/extrato-p/extrato-p';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the ExtratoPage page.
@@ -20,47 +21,53 @@ import { ExtratoPProvider } from '../../providers/extrato-p/extrato-p';
 export class ExtratoPage {
 
    public matriculaExt = localStorage.getItem("matricula");
+   public lista_extrato = new Array<any>();
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public extratoProvider: ExtratoPProvider
+    public extratoProvider: ExtratoPProvider,
+    public alertCtrl: AlertController
     ){}
+
+    showAlertExtrato() {
+      let alert = this.alertCtrl.create({
+        title: 'Sem extrato no momento',
+        //subTitle: 'A matricula ou cpf estão incorretos, por favor tente novamente',
+        buttons: ['OK']
+      });
+      alert.present();
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExtratoPage');
     console.log(this.matriculaExt);
-  }
 
-  extrato(){
     this.extratoProvider.getHistorico(this.matriculaExt).subscribe
       (
         data=>{
-          //console.log(data);
-          const response = (data as any);
-          const objeto_retorno = JSON.parse(response._body);
-          console.log(objeto_retorno);
-          if (data.status == 200)
-          {
-            console.log("Entrou no if");
-           /* this.nomeUsuario = objeto_retorno.NOME_USUARIO;
-            this.saldoUsuario = objeto_retorno.SALDO;
-            localStorage.setItem("nome",this.nomeUsuario);
-            localStorage.setItem("saldo",this.saldoUsuario);
-            localStorage.setItem("matricula",this.saldoUsuario);
-            //console.log();
-            this.navCtrl.push(HomePage);*/
+          //const response = (data as any);
+         // const objeto_extrato = JSON.parse(response._body);
+         // this.lista_extrato = objeto_extrato;
+          //console.log(objeto_extrato);
+          if (data.status == 200){
+            console.log("tem extrato");
+            const response = (data as any);
+            const objeto_extrato = JSON.parse(response._body);
+            this.lista_extrato = objeto_extrato;
+            console.log(objeto_extrato);
           }
-          else if(data.status == 206)
-          {
-            console.log("Entrou no else");
+          else if(data.status == 206){
+            console.log("Sem extrato");
+            this.showAlertExtrato();
+            this.navCtrl.push( TabsPage );
           }
+
+
         },
         error=>{
           console.log(error);
         }
       )
-
-  }
-
-}
+    }
+ }

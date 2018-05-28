@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CompraPage } from '../compra/compra';
 import { ExtratoPage } from '../extrato/extrato';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -10,7 +11,7 @@ import { ExtratoPage } from '../extrato/extrato';
 export class HomePage {
 
   public myName = localStorage.getItem("nome");
-  public mySaldo = localStorage.getItem("saldo");  
+  public mySaldo = localStorage.getItem("saldo");
   //public mySaldo = localStorage.getItem("saldo");
 
   constructor(public navCtrl: NavController) {
@@ -23,6 +24,10 @@ export class HomePage {
 
   doextrato(){
  	 this.navCtrl.push(ExtratoPage);
+  }
+
+  dosair(){    
+    this.navCtrl.push(LoginPage);
   }
 
 }

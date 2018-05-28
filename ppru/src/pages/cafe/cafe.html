@@ -1,0 +1,122 @@
+
+<ion-header>
+
+  <ion-navbar color="green">
+   <ion-title>Cardápio</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar color="green">
+      <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+      </ion-buttons>
+
+    <ion-title>
+     Segunda-feira
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar color="green">
+      <ion-buttons start>
+      <button ion-button icon-only tappable (click)="doback()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+      </ion-buttons>
+
+    <ion-title>
+     Café
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only tappable (click)="doforward()">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content >
+     <div class="spacer" style="height: 30px;"></div>
+  <ion-list color= "black">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/img/cafe.png">
+      </ion-avatar>
+      <h2>Bebidas quentes</h2>
+      <h3>Leite e café</h3>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/img/cafe.png">
+      </ion-avatar>
+      <h2>Vegetariano</h2>
+      <h3>Leite de soja</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/img/achocolatado.png">
+      </ion-avatar>
+      <h2>Achocolatado</h2>
+      <h3>Achocolatado sem leite</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/img/pao1.png">
+      </ion-avatar>
+      <h2>Pão</h2>
+      <h3>Pão Careca</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/img/pao1.png">
+      </ion-avatar>
+      <h2 color= "black">Vegetariano</h2>
+      <h3>Pão fracês</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/img/mante.png">
+      </ion-avatar>
+      <h2>Complemento</h2>
+      <h3>Manteiga</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/img/mante.png">
+      </ion-avatar>
+      <h2>Vegetariano</h2>
+      <h3>creme vegetal</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/img/prato.png">
+      </ion-avatar>
+      <h2>Complemento</h2>
+      <h3>Mingau</h3>
+    </ion-item>
+        <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/img/prato.png">
+      </ion-avatar>
+      <h2>Complemento Vegetariano</h2>
+      <h3>Mingau de aveia de soja</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="/assets/img/sobre.png">
+      </ion-avatar>
+      <h2>Fruta</h2>
+      <h3>Abacaxi</h3>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

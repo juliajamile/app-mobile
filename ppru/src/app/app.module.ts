@@ -8,7 +8,9 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
 
-import { CardapioPageModule } from '../pages/cardapio/cardapio.module';
+import { JantaPageModule } from '../pages/janta/janta.module';
+import { CafePageModule } from '../pages/cafe/cafe.module';
+import { AlmocoPageModule } from '../pages/almoco/almoco.module';
 import { StatusPageModule } from '../pages/status/status.module';
 import { CompraPageModule } from '../pages/compra/compra.module';
 import { ExtratoPageModule } from '../pages/extrato/extrato.module';
@@ -32,7 +34,9 @@ import { ExtratoPProvider } from '../providers/extrato-p/extrato-p';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    CardapioPageModule,
+    JantaPageModule,
+    CafePageModule,
+    AlmocoPageModule,
     StatusPageModule,
     CompraPageModule,
     ExtratoPageModule,

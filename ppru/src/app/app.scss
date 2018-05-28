@@ -548,7 +548,7 @@ ion-icon[ng-reflect-disabled="true"] {
 
 $fa-font-path: "../assets/fonts" !default;
 
-@import "font-awesome";
+//@import "font-awesome";
 
 i[class^="fa-"], ion-icon[class^="fa-"] {
     font-family: "FontAwesome" !important;
