@@ -19,12 +19,12 @@ export class JantaPage {
     console.log('ionViewDidLoad JantaPage');
   }
 
-  doback(){    
+  doback() {
     this.navCtrl.push(AlmocoPage);
   }
 
 
-  doforward(){    
+  doforward() {
     this.navCtrl.push(CafePage);
   }
 

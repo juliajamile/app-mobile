@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { ExtratoPProvider } from '../../providers/extrato-p/extrato-p';
 import { TabsPage } from '../tabs/tabs';
 
-/**
- * Generated class for the ExtratoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -20,24 +14,24 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class ExtratoPage {
 
-   public matriculaExt = localStorage.getItem("matricula");
-   public lista_extrato = new Array<any>();
+  public matriculaExt = localStorage.getItem("matricula");
+  public lista_extrato = new Array<any>();
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public extratoProvider: ExtratoPProvider,
     public alertCtrl: AlertController
-    ){}
+  ) { }
 
-    showAlertExtrato() {
-      let alert = this.alertCtrl.create({
-        title: 'Sem extrato no momento',
-        //subTitle: 'A matricula ou cpf estão incorretos, por favor tente novamente',
-        buttons: ['OK']
-      });
-      alert.present();
-    }
+  showAlertExtrato() {
+    let alert = this.alertCtrl.create({
+      title: 'Sem extrato no momento',
+      //subTitle: 'A matricula ou cpf estão incorretos, por favor tente novamente',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExtratoPage');
@@ -45,29 +39,29 @@ export class ExtratoPage {
 
     this.extratoProvider.getHistorico(this.matriculaExt).subscribe
       (
-        data=>{
-          //const response = (data as any);
-         // const objeto_extrato = JSON.parse(response._body);
-         // this.lista_extrato = objeto_extrato;
-          //console.log(objeto_extrato);
-          if (data.status == 200){
-            console.log("tem extrato");
-            const response = (data as any);
-            const objeto_extrato = JSON.parse(response._body);
-            this.lista_extrato = objeto_extrato;
-            console.log(objeto_extrato);
-          }
-          else if(data.status == 206){
-            console.log("Sem extrato");
-            this.showAlertExtrato();
-            this.navCtrl.push( TabsPage );
-          }
-
-
-        },
-        error=>{
-          console.log(error);
+      data => {
+        //const response = (data as any);
+        // const objeto_extrato = JSON.parse(response._body);
+        // this.lista_extrato = objeto_extrato;
+        //console.log(objeto_extrato);
+        if (data.status == 200) {
+          console.log("tem extrato");
+          const response = (data as any);
+          const objeto_extrato = JSON.parse(response._body);
+          this.lista_extrato = objeto_extrato;
+          console.log(objeto_extrato);
         }
+        else if (data.status == 206) {
+          console.log("Sem extrato");
+          this.showAlertExtrato();
+          this.navCtrl.push(TabsPage);
+        }
+
+
+      },
+      error => {
+        console.log(error);
+      }
       )
-    }
- }
+  }
+}

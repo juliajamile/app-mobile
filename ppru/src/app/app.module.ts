@@ -55,9 +55,9 @@ import { ExtratoPProvider } from '../providers/extrato-p/extrato-p';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     LoginProvider,
     ExtratoPProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

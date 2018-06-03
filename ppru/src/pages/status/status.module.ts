@@ -10,4 +10,4 @@ import { StatusPage } from './status';
     IonicPageModule.forChild(StatusPage),
   ],
 })
-export class StatusPageModule {}
+export class StatusPageModule { }

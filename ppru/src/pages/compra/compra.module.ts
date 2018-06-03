@@ -10,4 +10,4 @@ import { CompraPage } from './compra';
     IonicPageModule.forChild(CompraPage),
   ],
 })
-export class CompraPageModule {}
+export class CompraPageModule { }

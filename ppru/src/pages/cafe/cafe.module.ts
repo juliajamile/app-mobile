@@ -10,4 +10,4 @@ import { CafePage } from './cafe';
     IonicPageModule.forChild(CafePage),
   ],
 })
-export class CafePageModule {}
+export class CafePageModule { }

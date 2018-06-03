@@ -18,15 +18,15 @@ export class HomePage {
 
   }
   // login and go to home page
-  docompra(){
-   this.navCtrl.push( CompraPage);
+  docompra() {
+    this.navCtrl.push(CompraPage);
   }
 
-  doextrato(){
- 	 this.navCtrl.push(ExtratoPage);
+  doextrato() {
+    this.navCtrl.push(ExtratoPage);
   }
 
-  dosair(){    
+  dosair() {
     this.navCtrl.push(LoginPage);
   }
 

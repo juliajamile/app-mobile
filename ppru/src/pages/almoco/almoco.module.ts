@@ -10,4 +10,4 @@ import { AlmocoPage } from './almoco';
     IonicPageModule.forChild(AlmocoPage),
   ],
 })
-export class AlmocoPageModule {}
+export class AlmocoPageModule { }

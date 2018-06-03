@@ -18,12 +18,12 @@ export class AlmocoPage {
     console.log('ionViewDidLoad AlmocoPage');
   }
 
-    doback(){    
+  doback() {
     this.navCtrl.push(CafePage);
   }
 
 
-  doforward(){    
+  doforward() {
     this.navCtrl.push(JantaPage);
   }
 
